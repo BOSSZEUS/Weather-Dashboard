@@ -5,98 +5,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Weather Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='./cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" ></a> -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-
-
-  <div class="container">
-    <div class="row">
-      <form>
-        <p>
-          <label for="title">Movie Title</label>
-          <input type="text" name="title" id="title">
-        </p>
-        <p>
-          <button class="btn waves-effect waves-light" id="searchMovie">Search Movie</button>
-        </p>
-      </form>
+  <div id="errorModal" class="modal">
+    <div class="modal-content">
+      <h4>Error!</h4>
+      <p>City not found!</p>
     </div>
-    <div class="row">
-      <div id="movie" class="col s6">
-
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 m4 l3 navi">
+      <form class="row">
+        <div class="input-field col s8">
+          <input id="Search" type="text" class="validate">
+          <label for="Search">City Name</label>
+        </div>
+        <div class="input-field col s4">
+          <button class="btn search-btn" type="submit" name="action" id='Lookup'><i class="material-icons">search</i></button>
+        </div>
+      </form>
+      <div class="col s12">
+        <h4 class="no-margin">History:</h4>
       </div>
-      <div id="watchlist" class="col s6">
-
+      <div class="collection city-list" id="History">
+      </div>
+    </div>
+    <div class="col s12 m8 l9" id="Detail">
+      <h2 id="City"></h2>
+      <p>As of <span id="Time"></span></p>
+      <i class="" id="Icon"></i>
+      <p><span id="Cond"></span></p>
+      <p>Temperature: <span id="Temp"></span>℉</p>
+      <p>Humidity: <span id="Humi"></span>%</p>
+      <p>Wind Speed: <span id="Wind"></span>mph</p>
+      <p>UV Index: <a class="btn-small uv-btn" id="UV"></a></p>
+      <h4>5-day Forecast:</h4>
+      <div class="row" id="Fore">
       </div>
     </div>
   </div>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    let movie = {}
-
-    document.getElementById('searchMovie').addEventListener('click', event => {
-      event.preventDefault()
-      fetch(`http://www.omdbapi.com/?t=${document.getElementById('title').value}&apikey=trilogy`)
-        .then(r => r.json())
-        .then(({
-          Title,
-          Year,
-          Director,
-          Poster,
-          Plot
-        }) => {
-          movie = {
-            title: Title,
-            year: Year,
-            director: Director,
-            plot: Plot
-          }
-          document.getElementById('movie').innerHTML = `
-          <div class="card">
-            <div class="card-image">
-              <img src="${Poster}" alt="${Title}">
-              <span class="card-title">${Title}</span>
-            </div>
-            <div class="card-content">
-              <h4>Directed by ${Director}</h4>
-              <h5>Year: ${Year}</h5>
-              <p>${Plot}</p>
-            </div>
-            <div class="card-action">
-              <button class="btn waves-effect waves-light addWatchlist">Add To Watchlist</button>
-            </div>
-          </div>
-        `
-          document.getElementById('title').value = ''
-        })
-        .catch(e => console.error(e))
-    })
-    document.addEventListener('click', event => {
-      if (event.target.classList.contains('addWatchlist')) {
-        event.target.parentNode.parentNode.remove()
-        let movieElem = document.createElement('div')
-        movieElem.className = 'card'
-        movieElem.innerHTML = `
-            <div class="card-content">
-              <h3>${movie.title}</h3>
-              <h4>Directed by ${movie.director}</h4>
-              <h5>Year: ${movie.year}</h5>
-              <p>${movie.plot}</p>
-            </div>
-            <div class="card-action">
-              <button class="btn waves-effect waves-light removeWatchlist">Remove from Watchlist</button>
-            </div>
-        `
-        document.getElementById('watchlist').append(movieElem)
-      } else if (event.target.classList.contains('removeWatchlist')) {
-        event.target.parentNode.parentNode.remove()
-      }
-    })
-  </script>
+  <script src="./assets/js/app.js"></script>
 </body>
 
 </html>

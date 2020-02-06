@@ -1,0 +1,39 @@
+.navi {
+    background-color: #EEEEEE;
+  }
+
+  .weather-card {
+    background-color: #607D8B;
+  }
+
+  .search-btn {
+    background-color: #29B6F6;
+    /* padding: 6px; */
+    /* margin-top: 18px; */
+  }
+
+  .collection-item {
+    color: #607D8B !important;
+  }
+
+  .card-panel {
+    background-color: #607D8B;
+    padding: 0.5em;
+  }
+
+  .wi {
+    font-size: 4em;
+  }
+
+  .uv-btn {
+    cursor: default;
+  }
+
+  .city-list {
+    cursor: pointer;
+  }
+
+  .no-margin {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
