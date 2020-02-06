@@ -30,7 +30,8 @@
           <label for="Search">City Name</label>
         </div>
         <div class="input-field col s4">
-          <button class="btn search-btn" type="submit" name="action" id='Lookup'><i class="material-icons">search</i></button>
+          <button class="btn search-btn" type="submit" name="action" id='Lookup'><i
+              class="material-icons">search</i></button>
         </div>
       </form>
       <div class="col s12">
@@ -39,21 +40,25 @@
       <div class="collection city-list" id="History">
       </div>
     </div>
-    <div class="col s12 m8 l9" id="Detail">
-      <h2 id="City"></h2>
-      <p>As of <span id="Time"></span></p>
-      <i class="" id="Icon"></i>
-      <p><span id="Cond"></span></p>
-      <p>Temperature: <span id="Temp"></span>℉</p>
-      <p>Humidity: <span id="Humi"></span>%</p>
-      <p>Wind Speed: <span id="Wind"></span>mph</p>
-      <p>UV Index: <a class="btn-small uv-btn" id="UV"></a></p>
-      <h4>5-day Forecast:</h4>
-      <div class="row" id="Fore">
+    <div class="card">
+      <div class="col s12 m8 l9" id="Detail">
+        <h2 id="City"></h2>
+        <p>As of <span id="Time"></span></p>
+        <div id="Icon"></div>
+        <p><span id="Cond"></span></p>
+        <p>Temperature: <span id="Temp"></span>&nbsp;℉</p>
+        <p>Humidity: <span id="Humi"></span>%</p>
+        <p>Wind Speed: <span id="Wind"></span>&nbsp; mph</p>
+        <p>UV Index: <a id="UV"></a></p>
+        <h4>5-day Forecast:</h4>
+        <div class="row" id="Fore">
+        </div>
+        <div id="searchResult" class="col s6"></div>
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./assets/js/app.js"></script>
 </body>
