@@ -1,39 +1,53 @@
-.navi {
-    background-color: #EEEEEE;
-  }
+ 
+ .navi {
+   background-color: rgb(255, 254, 254);
+ }
 
-  .weather-card {
-    background-color: #607D8B;
-  }
+ .weather-card {
+   background-color: #607D8B;
+   height: min-content;
+   width: min-content;
+ }
 
-  .search-btn {
-    background-color: #29B6F6;
-    /* padding: 6px; */
-    /* margin-top: 18px; */
-  }
+ .search-btn {
+   background-color: #29B6F6;
+   /* padding: 6px; */
+   /* margin-top: 18px; */
+ }
 
-  .collection-item {
-    color: #607D8B !important;
-  }
+ .collection-item {
+   color: #607D8B !important;
+ }
 
-  .card-panel {
-    background-color: #607D8B;
-    padding: 0.5em;
-  }
+ .card-panel {
+   background-color: #607D8B;
+   padding: 0.5em;
+ }
 
-  .wi {
-    font-size: 4em;
-  }
+ .wi {
+   font-size: 4em;
+ }
 
-  .uv-btn {
-    cursor: default;
-  }
+ .uv-btn {
+   cursor: default;
+ }
 
-  .city-list {
-    cursor: pointer;
-  }
+ .city-list {
+   cursor: pointer;
+ }
 
-  .no-margin {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+ .no-margin {
+   margin-top: 0px;
+   margin-bottom: 0px;
+ }
+
+ .card .card-image img {
+   display: block;
+   border-radius: 2px 2px 0 0;
+   position: relative;
+   left: auto;
+   bottom: 0;
+   width: 100%;
+   float: right;
+   width: 20%;
+ }
