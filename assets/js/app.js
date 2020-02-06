@@ -53,7 +53,7 @@ let object = {
   }
 }
 // let searchText = $('#Search').val()
-// $.getJSON(`http://api.weatherapi.com/v1/forecast.json?key=feb197890533467b888181650200502&q=${searchText}&days=5`)
+// $.getJSON(`https://api.weatherapi.com/v1/forecast.json?key=feb197890533467b888181650200502&q=${searchText}&days=5`)
 //   .then(r => r.json())
 //   .then(data => {
 // for (let i = 0; i < 40; i++){
@@ -67,7 +67,7 @@ $(document).ready(function () {
   $("#Lookup").on('click', function (event) {
     event.preventDefault()
     let inputCity = $("#Search").val();
-    $.getJSON("http://api.weatherapi.com/v1/forecast.json?key=ff4f207a8ae5485cb4320106200402&q=" + inputCity + "&days=" + 5)
+    $.getJSON("https://api.weatherapi.com/v1/forecast.json?key=feb197890533467b888181650200502&q=" + inputCity + "&days=" + 5)
       .then(({ current, location, forecast }) => {
         console.log(location.name)
         console.log(location.localtime)
@@ -79,7 +79,7 @@ $(document).ready(function () {
         $('#Wind').text(current.wind_mph)
         $('#Time').text(location.localtime)
         $('#UV').text(current.uv)
-        $('#Icon').html(`<img src='http:${current.condition.icon}' alt='${location.name}'></img>`)
+        $('#Icon').html(`<img src='https:${current.condition.icon}' alt='${location.name}'></img>`)
         $("#searchResult").html(`
 <h4>5 Day Forecast:</h4>
   <div class="row">
@@ -88,7 +88,7 @@ $(document).ready(function () {
         <div class="card-body">
           <h4 id="" class="card-title">Date: ${forecast.forecastday[0].date}</h4>
           <div class="card-image">
-            <img src="http:${forecast.forecastday[0].day.condition.icon}" alt="${location.name}">
+            <img src="https:${forecast.forecastday[0].day.condition.icon}" alt="${location.name}">
           </div>
             <p id="">Conditions: ${forecast.forecastday[0].day.condition.text}</p>
             <p id="">High: ${forecast.forecastday[0].day.maxtemp_f}</p>
@@ -102,7 +102,7 @@ $(document).ready(function () {
         <div class="card-body">
           <h4 id="" class="card-title">Date: ${forecast.forecastday[1].date}</h4>
           <div class="card-image">
-            <img src="http:${forecast.forecastday[1].day.condition.icon}" alt="${location.name}">
+            <img src="https:${forecast.forecastday[1].day.condition.icon}" alt="${location.name}">
           </div>
             <p id="">Conditions: ${forecast.forecastday[1].day.condition.text}</p>
             <p id="">High: ${forecast.forecastday[1].day.maxtemp_f}</p>
@@ -116,7 +116,7 @@ $(document).ready(function () {
         <div class="card-body">
           <h4 id="" class="card-title">Date: ${forecast.forecastday[2].date}</h4>
           <div class="card-image">
-            <img src="http:${forecast.forecastday[2].day.condition.icon}" alt="${location.name}">
+            <img src="https:${forecast.forecastday[2].day.condition.icon}" alt="${location.name}">
           </div>
             <p id="">Conditions: ${forecast.forecastday[2].day.condition.text}</p>
             <p id="">High: ${forecast.forecastday[2].day.maxtemp_f}</p>
@@ -130,7 +130,7 @@ $(document).ready(function () {
         <div class="card-body">
           <h4 id="" class="card-title">Date: ${forecast.forecastday[3].date}</h4>
           <div class="card-image">
-            <img src="http:${forecast.forecastday[3].day.condition.icon}" alt="${location.name}">
+            <img src="https:${forecast.forecastday[3].day.condition.icon}" alt="${location.name}">
           </div>
             <p id="">Conditions: ${forecast.forecastday[3].day.condition.text}</p>
             <p id="">High: ${forecast.forecastday[3].day.maxtemp_f}</p>
@@ -144,7 +144,7 @@ $(document).ready(function () {
         <div class="card-body">
           <h4 id="" class="card-title">Date: ${forecast.forecastday[4].date}</h4>
           <div class="card-image">
-            <img src="http:${forecast.forecastday[4].day.condition.icon}" alt="${location.name}">
+            <img src="https:${forecast.forecastday[4].day.condition.icon}" alt="${location.name}">
           </div>
             <p id="">Conditions: ${forecast.forecastday[4].day.condition.text}</p>
             <p id="">High: ${forecast.forecastday[4].day.maxtemp_f}</p>
